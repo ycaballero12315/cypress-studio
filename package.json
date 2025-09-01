@@ -1,12 +1,12 @@
 {
   "dependencies": {
-    "cypress": "^15.0.0"
+    "cypress": "^15.0.0",
+    "cypress-real-events": "^1.14.0"
   },
   "name": "cypress-studio",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
-  "devDependencies": {},
   "scripts": {
     "studio": "cypress open"
   },
