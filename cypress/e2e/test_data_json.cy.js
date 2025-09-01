@@ -1,28 +1,28 @@
 /// <reference types="Cypress" />
 
 describe('Studio Cypress', () => {
-let data 
+let datas  
 
-  beforeEach('Connection to Institutoweb Login', () => {
-    cy.visit('https://institutoweb.com.ar/elm/login.html')
-    cy.fixture('./aleatory_user') 
-    .then(elm =>{ 
-        data = elm 
+  beforeEach('Connection for Institutoweb Login', () => {
+    cy.visit('https://institutoweb.com.ar/test/login.html')
+    cy.fixture('./aleatory_user')  // conectar con el archivo
+    .then(test =>{
+        datas = test
     })
   })
 
-  it('Login element', () => {
+  it('Test Login Usuario', () => {
     
-    data.forEach((data) =>{
-        
-          cy.get('#tuusuario').type(data.user);
-          cy.get('#tuclave').type(data.pass);
-          cy.get('#tumail').type(data.email);
+    datas.forEach((data) =>{
+          cy.writer('#tuusuario', data.user);
+          cy.writer('#tuclave', data.pass);
+          cy.writer('#tumail', data.email);
 
           cy.get(':nth-child(8)').click();
 
-          cy.get('h3').should('have.text', 'Corret!');
+          cy.get('h3').should('have.text', 'Acceso correcto!');
           cy.get('#volver').click();
+
     })   
   })
 
