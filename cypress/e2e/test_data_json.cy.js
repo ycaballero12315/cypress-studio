@@ -18,10 +18,11 @@ let datas
           cy.writer('#tuclave', data.pass);
           cy.writer('#tumail', data.email);
 
-          cy.get(':nth-child(8)').click();
-
+          // cy.get(':nth-child(8)').click();
+          cy.myclick(':nth-child(8)')
           cy.get('h3').should('have.text', 'Acceso correcto!');
-          cy.get('#volver').click();
+          // cy.get('#volver').click();
+          cy.myclick('#volver')
 
     })   
   })

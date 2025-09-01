@@ -4,3 +4,8 @@ Cypress.Commands.add('writer', (selector, text) => {
   cy.wait(500);
 });
 
+Cypress.Commands.add('myclick', (selector) => {
+  cy.get(selector).click();
+  cy.wait(500);
+});
+
